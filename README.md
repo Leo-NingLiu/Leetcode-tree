@@ -62,5 +62,20 @@
 2. 当访问到的子节点为空时，说明该结点无效，赋值Integer.MAX_VALUE
 3. 当访问的结点没有孩子时，说明只有一层，return 1
 4. 其他情况最小深度等于左子树的最小深度和右子树最小深度的最小值再加1，这个1代表根节点。
+## 112题 path sum
+使用递归的方法。每遍历到一个结点，我们用sum减去当前结点的value。
+## 113题 path sum II
+这道题我们使用了递归和回溯的方法。
+递归我们需要确认的第一个就是递归的出口：
+第一个出口应该是当结点为空的时，我们直接return
+第二个出口应该是当搜索到叶子结点时，我们来check sum值，若sum值为零说明遍历到目标结点，那么我们将这个结点添加到temp list中去。
+递归拆解：
+我们需要分别递归左子树和右子树
+关于回溯（backtracking）
+回溯算法实际上是一个类似枚举的探索尝试过程，主要是在搜索尝试过程中寻找问题的解，当发现已不满足求解条件时，就回溯返回，尝试别的路径。
+我们使用remove函数是为了remove刚刚加入的元素，然后尝试其他结果。
+reference：
+https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
+https://www.cnblogs.com/lzxin/p/9714133.html
 ## 144题 preorder / 145题 postorder
 这两道题与94题的解题思路是一样的。preorder只需将顺序改为先处理自己，再处理左子树，最后处理右子树。postorder需要将顺序改为先处理左子树，再处理右子树，最后处理自己。
