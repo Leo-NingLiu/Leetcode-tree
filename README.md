@@ -4,6 +4,8 @@
 1. 处理左子树
 2. 添加自己的val值
 3. 处理右子树
+## 95题 Unique BST II
+我们可以构造一个递归函数，然后返回BST。我们需要传入的值是一个开始点，一个结束点。递归出口是当开始点大于结束点时返回。我们可以利用BST的性质，也就是左子树的所有值小于根节点，右子树的所有值大于根节点。若根节点为n,那么左子树的范围应该为start到n-1，右子树的范围应该时n+1到end.
 ## 96题 Unique Binary Search Trees
 这道题我们使用了动态规划的方法。说到动态规划我们这里先总结一下动态规划类型的题该如何做。
 动态规划题目特点：
@@ -79,5 +81,7 @@
 reference：  
 https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)  
 https://www.cnblogs.com/lzxin/p/9714133.html
+## 129题 sum root to leaf numbers
+构造一个helper函数，计算每个叶结点的值。当搜索到的该节点为叶结点时，跳出递归。
 ## 144题 preorder / 145题 postorder
 这两道题与94题的解题思路是一样的。preorder只需将顺序改为先处理自己，再处理左子树，最后处理右子树。postorder需要将顺序改为先处理左子树，再处理右子树，最后处理自己。
